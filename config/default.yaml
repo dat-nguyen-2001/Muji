@@ -1,0 +1,3 @@
+# Default config
+mongodb:
+  uri: mongodb+srv://datnguyen210:Z5TuqxX0woBQWbPR@main.4exjuhx.mongodb.net/

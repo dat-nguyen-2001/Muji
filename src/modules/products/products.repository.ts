@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Dbmodel } from '../../shared/enums';
 import { ProductDocument } from './products.schema';
+import { IProduct } from './products.interface';
 
 @Injectable()
 export class ProductRepository implements OnApplicationBootstrap {
@@ -12,6 +13,10 @@ export class ProductRepository implements OnApplicationBootstrap {
 
   async findAll(): Promise<any[]> {
     return this.model.find().exec();
+  }
+
+  async findOne(conditions: any): Promise<IProduct> {
+    return this.model.findOne(conditions);
   }
 
   async onApplicationBootstrap(): Promise<void> {

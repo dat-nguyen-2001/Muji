@@ -15,3 +15,20 @@ export enum CountriesOfOrigin {
   thailand = 'THÁI LAN',
   china = 'TRUNG QUỐC',
 }
+
+export class IProduct {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  productCode: string;
+  capacity: {
+    amount: number;
+    unit: { type: string; enum: CurrencyUnits };
+  };
+  displayImgs: string[];
+  specs: ProductSpecs[];
+  note: string;
+  origin: { type: string; enum: CountriesOfOrigin };
+  material: string;
+}
